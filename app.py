@@ -2,7 +2,7 @@
 # changed imbalance to false as default
 import streamlit as st
 import matplotlib.pyplot as plt
-from helpers2 import make_hashes, check_hashes, create_usertable, add_userdata, login_user, view_all_users , load_data, describe_sample, createmodel, createmodelmcc, predict, unseendata, final, savemodel
+from helpers2 import load_data, describe_sample, createmodel, createmodelmcc, predict, unseendata, final, savemodel
 import os 
 import pycaret.classification as cl
 import pandas as pd
