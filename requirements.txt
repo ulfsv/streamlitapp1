@@ -1,0 +1,5 @@
+streamlit
+pycaret==2.1
+numpy
+pandas
+datacleaner
