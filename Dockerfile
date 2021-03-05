@@ -1,36 +1,11 @@
-FROM python:3.7
-
-RUN pip install virtualenv
-ENV VIRTUAL_ENV=/venv
-RUN virtualenv venv -p python3
-ENV PATH="VIRTUAL_ENV/bin:$PATH"
-
-WORKDIR /app
-ADD . /app
-
-# Install dependencies
-RUN pip install -r requirements.txt
-
-# copying all files over
+FROM python:3.7-slim
 COPY . /app
-
-# Expose port 
-ENV PORT 8501
-
-# cmd to launch app when container is run
-CMD streamlit run app.py
-#CMD streamlit run --server.port 8 --server.enableCORS false app.py
-# streamlit-specific commands for config
-ENV LC_ALL=C.UTF-8
-ENV LANG=C.UTF-8
-RUN mkdir -p /root/.streamlit
-RUN bash -c 'echo -e "\
-[general]\n\
-email = \"\"\n\
-" > /root/.streamlit/credentials.toml'
-
-RUN bash -c 'echo -e "\
-[server]\n\
-enableCORS = false\n\
-enableWebsocketCompression = false\n\
-" > /root/.streamlit/config.toml'
+WORKDIR /app
+RUN pip install -r requirements.txt
+EXPOSE 80
+RUN mkdir ~/.streamlit
+RUN cp config.toml ~/.streamlit/config.toml
+RUN cp credentials.toml ~/.streamlit/credentials.toml
+WORKDIR /app
+ENTRYPOINT ["streamlit", "run"]
+CMD ["app.py"]
