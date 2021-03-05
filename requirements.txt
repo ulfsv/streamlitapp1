@@ -1,7 +1,5 @@
---find-links wheelhouse
 streamlit==0.77.0
 pycaret==2.1
 numpy
 pandas
-datacleaner
 matplotlib
