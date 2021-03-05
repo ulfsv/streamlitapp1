@@ -95,21 +95,25 @@ serverPort = 80
 
 # Name of the AWS S3 bucket to save apps.
 # Default: (unset)
-#bucket =
+# bucket =
 
 # URL root for external view of Streamlit apps.
 # Default: (unset)
-#url =
+# url =
 
 # Access key to write to the S3 bucket.
 # Leave unset if you want to use an AWS profile.
 # Default: (unset)
-#accessKeyId =
+# accessKeyId =
 
 # Secret access key to write to the S3 bucket.
 # Leave unset if you want to use an AWS profile.
 # Default: (unset)
-#secretAccessKey =
+# secretAccessKey =
+
+# Make the shared app visible only to users who have been granted view permission. If you are interested in this option, contact us at support@streamlit.io.
+# Default: false
+# requireLoginToView = false
 
 # The "subdirectory" within the S3 bucket where to save apps.
 # S3 calls paths "keys" which is why the keyPrefix is like a subdirectory. Use "" to mean the root directory.
@@ -118,9 +122,9 @@ keyPrefix = ""
 
 # AWS region where the bucket is located, e.g. "us-west-2".
 # Default: (unset)
-#region =
+# region =
 
 # AWS credentials profile to use.
 # Leave unset to use your default profile.
 # Default: (unset)
-#profile =
+# profile =
