@@ -252,6 +252,3 @@ def main():
 
         #else:
         #    st.warning("Incorrect Username/Password")
-
-if __name__ == '__main__':
-    main()
